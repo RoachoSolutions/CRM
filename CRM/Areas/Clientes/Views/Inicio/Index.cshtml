@@ -1,0 +1,116 @@
+﻿@model List<RoachoSLN.Entidades.CRM.Clientes>
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Clientes</h2>
+        <ol class="breadcrumb">
+            <li class="active">
+                <strong><a href="@Url.Action("Index", "Inicio", new { area="Clientes" })">Inicio</a></strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="">
+                        <a onclick="fnClickAddRow();" href="javascript:void(0);" class="btn btn-primary ">Add a new row</a>
+                    </div>
+                    <table class="table table-striped table-bordered table-hover " id="editable">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Telefono</th>
+                                <th>Telefono2</th>
+                                <th>Pagina</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{ 
+                                if (Model != null)
+                                {
+                                    foreach (RoachoSLN.Entidades.CRM.Clientes _cliente in Model)
+                                    {
+                                        <tr>
+                                            <td>@_cliente.id</td>
+                                            <td>@_cliente.nombre</td>
+                                            <td>@_cliente.telefono</td>   
+                                            <td>@_cliente.telefono2</td>   
+                                            <td>@_cliente.pagina</td>   
+                                        </tr>
+                                        }
+                                    }
+                                }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Telefono</th>
+                                <th>Telefono2</th>
+                                <th>Pagina</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/plugins/jeditable")
+    @Scripts.Render("~/plugins/dataTables")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            /* Init DataTables */
+            var oTable = $('#editable').dataTable();
+
+            ///* Apply the jEditable handlers to the table */
+            //oTable.$('td').editable( '../example_ajax.php', {
+            //    "callback": function( sValue, y ) {
+            //        var aPos = oTable.fnGetPosition( this );
+            //        oTable.fnUpdate( sValue, aPos[0], aPos[1] );
+            //    },
+            //    "submitdata": function ( value, settings ) {
+            //        return {
+            //            "row_id": this.parentNode.getAttribute('id'),
+            //            "column": oTable.fnGetPosition( this )[2]
+            //        };
+            //    },
+
+            //    "width": "90%",
+            //    "height": "100%"
+            //} );
+
+
+        });
+
+        function fnClickAddRow() {
+            $('#editable').dataTable().fnAddData( [
+                "Custom row",
+                "New row",
+                "New row",
+                "New row",
+                "New row" ] );
+
+        }
+    </script>
+}
