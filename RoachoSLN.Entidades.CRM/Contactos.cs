@@ -16,11 +16,12 @@ namespace RoachoSLN.Entidades.CRM
             ContactoArchivo = new HashSet<ContactoArchivo>();
             ContactoHistorico = new HashSet<ContactoHistorico>();
             ContactoNota = new HashSet<ContactoNota>();
+
         }
 
         public Guid id { get; set; }
 
-        public int? prefijo { get; set; }
+        public Guid? idprefijo { get; set; }
 
         [StringLength(100)]
         public string nombre { get; set; }
@@ -89,6 +90,8 @@ namespace RoachoSLN.Entidades.CRM
         public virtual CatEstados CatEstados { get; set; }
 
         public virtual CatOrigenes CatOrigenes { get; set; }
+
+        public virtual CatPrefijos CatPrefijos { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClienteContacto> ClienteContacto { get; set; }

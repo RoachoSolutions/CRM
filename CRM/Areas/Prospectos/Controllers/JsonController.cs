@@ -6,12 +6,11 @@ using System.Web.Mvc;
 
 namespace CRM.Areas.Prospectos.Controllers
 {
-    public class InicioController : Controller
+    public class JsonController : Controller
     {
-        // GET: Prospectos/Inicio
+        // GET: Prospectos/Ajax
         public ActionResult Index()
         {
-            ViewBag.Title = "Prospecto";
             return View();
         }
     }

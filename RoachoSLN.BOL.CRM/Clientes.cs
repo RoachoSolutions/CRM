@@ -8,7 +8,7 @@ namespace RoachoSLN.BOL.CRM
 {
     public class Clientes
     {
-        public List<Entidades.CRM.Clientes> Obtener()
+        public static List<Entidades.CRM.Clientes> Obtener()
         {
             using(DAL.CRM.CRMModel context=new DAL.CRM.CRMModel())
             {

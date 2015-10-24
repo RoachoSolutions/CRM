@@ -55,6 +55,7 @@
     <Compile Include="CatIndustrias.cs" />
     <Compile Include="CatOrigenes.cs" />
     <Compile Include="CatPaises.cs" />
+    <Compile Include="CatPrefijos.cs" />
     <Compile Include="ClienteArchivo.cs" />
     <Compile Include="ClienteContacto.cs" />
     <Compile Include="ClienteHistorico.cs" />
@@ -76,6 +77,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RoachoSLN.Resource\RoachoSLN.Resource.csproj">
+      <Project>{738833f7-fb6c-4185-a0a1-645b3e9baae7}</Project>
+      <Name>RoachoSLN.Resource</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -5,8 +5,10 @@ namespace RoachoSLN.Entidades.CRM
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Runtime.Serialization;
 
     [Table("RoachoCRM.Prospectos")]
+    [DataContract]
     public partial class Prospectos
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,27 +23,36 @@ namespace RoachoSLN.Entidades.CRM
 
         public Guid id { get; set; }
 
-        public int? prefijo { get; set; }
+        public Guid? idprefijo { get; set; }
 
+        [DataMember]
+        [Required(ErrorMessage = "please enter username")]
         [StringLength(100)]
+        [Display(Name = "Prospecto_Nombre", ResourceType =typeof(RoachoSLN.Resource.Resource))]
         public string nombre { get; set; }
 
         [StringLength(100)]
+        [Display(Name = "Prospecto_Apellido1", ResourceType = typeof(RoachoSLN.Resource.Resource))]
         public string apellido1 { get; set; }
 
         [StringLength(100)]
+        [Display(Name = "Prospecto_Apellido2", ResourceType = typeof(RoachoSLN.Resource.Resource))]
         public string apellido2 { get; set; }
 
         [StringLength(12)]
+        [Display(Name = "Prospecto_Telefono", ResourceType = typeof(RoachoSLN.Resource.Resource))]
         public string telefono { get; set; }
 
         [StringLength(12)]
+        [Display(Name = "Prospecto_Telefono2", ResourceType = typeof(RoachoSLN.Resource.Resource))]
         public string telefono2 { get; set; }
 
         [StringLength(12)]
+        [Display(Name = "Prospecto_Celular", ResourceType = typeof(RoachoSLN.Resource.Resource))]
         public string celular { get; set; }
 
         [StringLength(100)]
+        [Display(Name = "Prospecto_Correo", ResourceType = typeof(RoachoSLN.Resource.Resource))]
         public string correo { get; set; }
 
         [StringLength(100)]
@@ -93,6 +104,8 @@ namespace RoachoSLN.Entidades.CRM
         public virtual CatIndustrias CatIndustrias { get; set; }
 
         public virtual CatOrigenes CatOrigenes { get; set; }
+
+        public virtual CatPrefijos CatPrefijos { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Clientes> Clientes { get; set; }
