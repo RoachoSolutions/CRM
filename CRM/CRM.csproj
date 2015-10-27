@@ -114,6 +114,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Prospectos\Views\Registro\registro.js" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -283,6 +284,7 @@
     <Content Include="Areas\Prospectos\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Prospectos\Views\Inicio\Index.cshtml" />
     <Content Include="Areas\Prospectos\Views\Registro\Index.cshtml" />
+    <Content Include="Areas\Prospectos\Views\Registro\nuevo.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

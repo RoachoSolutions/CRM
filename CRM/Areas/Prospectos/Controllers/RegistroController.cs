@@ -14,8 +14,17 @@ namespace CRM.Areas.Prospectos.Controllers
     {
         // GET: Prospectos/Registro
         public ActionResult Index()
-        {           
+        {
+            
             return View();
         }
+
+
+        [HttpPost]
+        public ActionResult Guardar(RoachoSLN.Entidades.CRM.Prospectos _pros)
+        {
+            return Json("prueba:2");
+        }
+
     }
 }

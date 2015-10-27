@@ -117,7 +117,70 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Prospecto_Nombre" xml:space="preserve">
+  <data name="Prospecto_apellido1" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="Prospecto_apellido2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prospecto_calificacion" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prospecto_calle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prospecto_celular" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prospecto_ciudad" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prospecto_codigopostal" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prospecto_convertido" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prospecto_correo" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prospecto_estado" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prospecto_estatus" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prospecto_iddueño" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prospecto_idindustria" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prospecto_idorigen" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prospecto_ingresos" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prospecto_nombre" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="Prospecto_numempleado" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prospecto_pagina" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prospecto_skype" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prospecto_telefono" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prospecto_telefono2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prospecto_textoextra" xml:space="preserve">
+    <value />
   </data>
 </root>
