@@ -12,7 +12,8 @@ namespace CRM.Areas.Prospectos.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Prospecto";
-            return View();
+            List<RoachoSLN.Entidades.CRM.Prospectos> _prospectos = RoachoSLN.BOL.CRM.Prospectos.Lista();
+            return View(_prospectos);
         }
     }
 }

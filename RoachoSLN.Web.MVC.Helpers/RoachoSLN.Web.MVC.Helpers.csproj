@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="HMTLHelperExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="URLHelperExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

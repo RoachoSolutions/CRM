@@ -53,6 +53,8 @@
     <Compile Include="Clientes.cs" />
     <Compile Include="DropDownList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Prospectos.cs" />
+    <Compile Include="Usuarios.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RoachoSLN.DAL.CRM\RoachoSLN.DAL.CRM.csproj">

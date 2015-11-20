@@ -284,7 +284,6 @@
     <Content Include="Areas\Prospectos\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Prospectos\Views\Inicio\Index.cshtml" />
     <Content Include="Areas\Prospectos\Views\Registro\Index.cshtml" />
-    <Content Include="Areas\Prospectos\Views\Registro\nuevo.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -292,6 +291,10 @@
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\plugins\blueimp\jquery.blueimp-gallery.min.js" />
     <Content Include="Scripts\plugins\chartist\chartist.min.js" />
@@ -771,6 +774,10 @@
     <ProjectReference Include="..\RoachoSLN.Entidades.CRM\RoachoSLN.Entidades.CRM.csproj">
       <Project>{2ac2d649-42eb-4bea-9d0d-f741842f49ab}</Project>
       <Name>RoachoSLN.Entidades.CRM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoachoSLN.Entidades.Resultados\RoachoSLN.Entidades.Resultados.csproj">
+      <Project>{1a86e309-2859-42ff-9744-3fcd0c169eee}</Project>
+      <Name>RoachoSLN.Entidades.Resultados</Name>
     </ProjectReference>
     <ProjectReference Include="..\RoachoSLN.Web.MVC.Attributes\RoachoSLN.Web.MVC.Attributes.csproj">
       <Project>{f0deb6bb-3ecc-4ca1-a651-73b63cb8c3c5}</Project>

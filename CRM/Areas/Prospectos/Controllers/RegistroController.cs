@@ -1,4 +1,5 @@
-﻿using RoachoSLN.Web.MVC.Attributes;
+﻿using RoachoSLN.Entidades.Resultados;
+using RoachoSLN.Web.MVC.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -14,16 +15,26 @@ namespace CRM.Areas.Prospectos.Controllers
     {
         // GET: Prospectos/Registro
         public ActionResult Index()
-        {
-            
-            return View();
+        {           
+            return View(new RoachoSLN.Entidades.CRM.Prospectos() { id=Guid.NewGuid()});
         }
 
 
         [HttpPost]
         public ActionResult Guardar(RoachoSLN.Entidades.CRM.Prospectos _pros)
         {
-            return Json("prueba:2");
+            ResultadoJson _retValue = new ResultadoJson();
+            if (RoachoSLN.BOL.CRM.Prospectos.Guardar(_pros))
+            {
+                _retValue.id = _pros.id.ToString();
+                _retValue.status = 1;                
+            }
+            else
+            {
+                _retValue.id = _pros.id.ToString();
+                _retValue.status = 2;                
+            }
+            return Json(_retValue);
         }
 
     }

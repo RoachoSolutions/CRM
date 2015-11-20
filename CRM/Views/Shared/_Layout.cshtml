@@ -20,6 +20,8 @@
     @Styles.Render("~/Content/css")
     @Styles.Render("~/font-awesome/css")
 
+ 
+
 </head>
 <body>
 
@@ -62,5 +64,8 @@
 
     <!-- Handler for local scripts -->
     @RenderSection("scripts", required: false)
+
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 </body>
 </html>

@@ -103,7 +103,7 @@ namespace RoachoSLN.Entidades.CRM
         public Guid? iddueño { get; set; }
 
         [Display(Name = "estatus", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
-        public int? estatus { get; set; }
+        public Guid? estatus { get; set; }
 
         [Display(Name = "convertido", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
         public bool? convertido { get; set; }
@@ -128,6 +128,8 @@ namespace RoachoSLN.Entidades.CRM
         public virtual CatOrigenes CatOrigenes { get; set; }
         [IgnoreDataMember]
         public virtual CatPrefijos CatPrefijos { get; set; }
+        [IgnoreDataMember]
+        public virtual CatProspectoEstatus CatProspectoEstatus { get; set; }
 
         [IgnoreDataMember]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

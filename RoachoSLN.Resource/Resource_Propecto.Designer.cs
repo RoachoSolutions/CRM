@@ -205,7 +205,7 @@ namespace RoachoSLN.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Numero de empleados.
+        ///   Looks up a localized string similar to N° de empleados.
         /// </summary>
         public static string numempleado {
             get {

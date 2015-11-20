@@ -18,6 +18,7 @@ namespace RoachoSLN.DAL.CRM
         public virtual DbSet<CatOrigenes> CatOrigenes { get; set; }
         public virtual DbSet<CatPaises> CatPaises { get; set; }
         public virtual DbSet<CatPrefijos> CatPrefijos { get; set; }        
+        public virtual DbSet<CatProspectoEstatus> CatProspectoEstatus { get; set; }
         public virtual DbSet<ClienteArchivo> ClienteArchivo { get; set; }
         public virtual DbSet<ClienteContacto> ClienteContacto { get; set; }
         public virtual DbSet<ClienteHistorico> ClienteHistorico { get; set; }
@@ -111,6 +112,11 @@ namespace RoachoSLN.DAL.CRM
                 .HasMany(e => e.Prospectos)
                 .WithOptional(e => e.CatPrefijos)
                 .HasForeignKey(e => e.idprefijo);
+
+            modelBuilder.Entity<CatProspectoEstatus>()
+                .HasMany(e => e.Prospectos)
+                .WithOptional(e => e.CatProspectoEstatus)
+                .HasForeignKey(e => e.estatus);
 
             modelBuilder.Entity<ClienteNota>()
                 .Property(e => e.nota)
