@@ -26,7 +26,7 @@
                                 {
                                     foreach (RoachoSLN.Entidades.CRM.Prospectos _prospecto in Model)
                                     {
-                                        <tr>
+                                        <tr data-id="@_prospecto.id">
                                             <td>@_prospecto.id</td>
                                             <td>@_prospecto.nombre @_prospecto.apellido1 @_prospecto.apellido2</td>
                                             <td>@_prospecto.telefono</td>
@@ -70,6 +70,11 @@
 
             /* Init DataTables */
             var oTable = $('#editable').dataTable();
+
+            $("#editable tbody tr").dblclick(function () {
+                var id = $(this).attr("data-id");
+                window.location.href = "@Url.Action("Editar", "Registro", new { area = "Prospectos" })" + "/" +  id;
+            });
 
             ///* Apply the jEditable handlers to the table */
             //oTable.$('td').editable( '../example_ajax.php', {

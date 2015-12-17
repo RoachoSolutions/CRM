@@ -16,7 +16,12 @@ namespace CRM.Areas.Prospectos.Controllers
         // GET: Prospectos/Registro
         public ActionResult Index()
         {           
-            return View(new RoachoSLN.Entidades.CRM.Prospectos() { id=Guid.NewGuid()});
+            return View(new RoachoSLN.Entidades.CRM.Prospectos() { id=Guid.Empty});
+        }
+
+        public ActionResult Editar(Guid id)
+        {            
+            return View("Index", RoachoSLN.BOL.CRM.Prospectos.Obtener(id));
         }
 
 
