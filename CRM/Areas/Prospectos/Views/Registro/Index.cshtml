@@ -1,0 +1,167 @@
+﻿@model RoachoSLN.Entidades.CRM.Prospectos
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Nuevo Prospecto</h5>
+                    <div class="ibox-tools">                        
+                        @{
+                            if (@Model != null)
+                            {
+                                <div>  Dueño: @Model.iddueño</div>
+                            }
+                        }
+                    </div>
+                    <div class="ibox-content">
+                        <div id="testAjax"></div>
+                        @using (Ajax.BeginForm("Guardar", "Registro",new { area = "Prospectos" },
+                            new AjaxOptions {  HttpMethod ="POST",OnSuccess= "termino(xhr, status, 'Person')" }, new { @class = "form-horizontal" }))
+                        {
+                            @Html.ValidationSummary(true)
+                           
+                            if (@Model != null)
+                            {
+                                if (Model.convertido!=null && Model.convertido==true)
+                                {
+                                    <div class="col-sm-12">Convertido</div>
+                                }
+                            }
+                            @Html.HiddenFor(m => m.id)
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    @Html.ValidationMessageFor(m => m.nombre)
+                                    @Html.LabelFor(m => m.nombre, new { @class = "col-sm-4 control-label" })
+                                    <div class="col-sm-8">@Html.TextBoxFor(m => m.nombre, new { @class = "form-control", @required = "required" }) </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.ValidationMessageFor(m => m.apellido1)
+                                    @Html.LabelFor(m => m.apellido1, new { @class = "col-sm-4 control-label" })
+                                    <div class="col-sm-8">@Html.TextBoxFor(m => m.apellido1, new { @class = "form-control" }) </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.ValidationMessageFor(m => m.apellido2)
+                                    @Html.LabelFor(m => m.apellido2, new { @class = "col-sm-4 control-label" })
+                                    <div class="col-sm-8">@Html.TextBoxFor(m => m.apellido2, new { @class = "form-control" }) </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.ValidationMessageFor(m => m.idorigen)
+                                    @Html.LabelFor(m => m.idorigen, new { @class = "col-sm-4 control-label" })
+                                    <div class="col-sm-8">@Html.DropDownListFor(m => m.idorigen, RoachoSLN.BOL.CRM.DropDownList.ListaOrigenes(), new { @class = "form-control" }) </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.ValidationMessageFor(m => m.idindustria)
+                                    @Html.LabelFor(m => m.idindustria, new { @class = "col-sm-4 control-label" })
+                                    <div class="col-sm-8">@Html.DropDownListFor(m => m.idindustria, RoachoSLN.BOL.CRM.DropDownList.ListaIndustria(), new { @class = "form-control" }) </div>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed visible-sm-block visible-xs-block"></div>
+                            
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    @Html.ValidationMessageFor(m => m.telefono)
+                                    @Html.LabelFor(m => m.telefono, new { @class = "col-sm-4 control-label" })
+                                    <div class="col-sm-8">@Html.TextBoxFor(m => m.telefono, new { @class = "form-control" }) </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.ValidationMessageFor(m => m.telefono2)
+                                    @Html.LabelFor(m => m.telefono2, new { @class = "col-sm-4 control-label" })
+                                    <div class="col-sm-8">@Html.TextBoxFor(m => m.telefono2, new { @class = "form-control" }) </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.ValidationMessageFor(m => m.celular)
+                                    @Html.LabelFor(m => m.celular, new { @class = "col-sm-4 control-label" })
+                                    <div class="col-sm-8">@Html.TextBoxFor(m => m.celular, new { @class = "form-control" }) </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.ValidationMessageFor(m => m.correo)
+                                    @Html.LabelFor(m => m.correo, new { @class = "col-sm-4 control-label" })
+                                    <div class="col-sm-8">@Html.TextBoxFor(m => m.correo, new { @class = "form-control" }) </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.ValidationMessageFor(m => m.pagina)
+                                    @Html.LabelFor(m => m.pagina, new { @class = "col-sm-4 control-label" })
+                                    <div class="col-sm-8">@Html.TextBoxFor(m => m.pagina, new { @class = "form-control" }) </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.ValidationMessageFor(m => m.skype)
+                                    @Html.LabelFor(m => m.skype, new { @class = "col-sm-4 control-label" })
+                                    <div class="col-sm-8">@Html.TextBoxFor(m => m.skype, new { @class = "form-control" }) </div>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed visible-sm-block visible-xs-block"></div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    @Html.ValidationMessageFor(m => m.calle)
+                                    @Html.LabelFor(m => m.calle, new { @class = "col-sm-4 control-label" })
+                                    <div class="col-sm-8">@Html.TextBoxFor(m => m.calle, new { @class = "form-control" }) </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.ValidationMessageFor(m => m.ciudad)
+                                    @Html.LabelFor(m => m.ciudad, new { @class = "col-sm-4 control-label" })
+                                    <div class="col-sm-8">@Html.TextBoxFor(m => m.ciudad, new { @class = "form-control" }) </div>
+                                </div>  
+                                <div class="form-group">
+                                    @Html.ValidationMessageFor(m => m.estado)
+                                    @Html.LabelFor(m => m.estado, new { @class = "col-sm-4 control-label" })
+                                    <div class="col-sm-8">@Html.TextBoxFor(m => m.estado, new { @class = "form-control" }) </div>
+                                </div>  
+                                <div class="form-group">
+                                    @Html.ValidationMessageFor(m => m.codigopostal)
+                                    @Html.LabelFor(m => m.codigopostal, new { @class = "col-sm-4 control-label" })
+                                    <div class="col-sm-8">@Html.TextBoxFor(m => m.codigopostal, new { @class = "form-control" }) </div>
+                                </div> 
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    @Html.ValidationMessageFor(m => m.ingresos)
+                                    @Html.LabelFor(m => m.ingresos, new { @class = "col-sm-4 control-label" })
+                                    <div class="col-sm-8">@Html.TextBoxFor(m => m.ingresos, new { @class = "form-control" }) </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.ValidationMessageFor(m => m.numempleado)
+                                    @Html.LabelFor(m => m.numempleado, new { @class = "col-sm-4 control-label" })
+                                    <div class="col-sm-8">@Html.TextBoxFor(m => m.numempleado, new { @class = "form-control" }) </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.ValidationMessageFor(m => m.calificacion)
+                                    @Html.LabelFor(m => m.calificacion, new { @class = "col-sm-4 control-label" })
+                                    <div class="col-sm-8">@Html.TextBoxFor(m => m.calificacion, new { @class = "form-control" }) </div>
+                                </div>                               
+                                <div class="form-group">
+                                    @Html.ValidationMessageFor(m => m.iddueño)
+                                    @Html.LabelFor(m => m.iddueño, new { @class = "col-sm-4 control-label" })
+                                    <div class="col-sm-8">@Html.TextBoxFor(m => m.iddueño, new { @class = "form-control" }) </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.ValidationMessageFor(m => m.estatus)
+                                    @Html.LabelFor(m => m.estatus, new { @class = "col-sm-4 control-label" })
+                                    <div class="col-sm-8">@Html.DropDownListFor(m => m.estatus, RoachoSLN.BOL.CRM.DropDownList.ListaEstatusProspecto(), new { @class = "form-control" }) </div>
+                                </div>                               
+                            </div>
+                            <div class="form-group">
+                                @Html.ValidationMessageFor(m => m.textoextra)
+                                @Html.LabelFor(m => m.textoextra, new { @class = "col-sm-4" })
+                                @Html.TextAreaFor(m => m.textoextra, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12 text-right">
+                                    <input class="btn btn-white" type="submit" value="Cancel">
+                                    <input class="btn btn-primary" type="submit" value="Save changes">
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="@Url.ContentArea("/Views/Registro/registro.js")"></script>
+    }
+
+   
