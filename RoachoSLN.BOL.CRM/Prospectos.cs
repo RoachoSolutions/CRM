@@ -21,6 +21,7 @@ namespace RoachoSLN.BOL.CRM
         {
             using (DAL.CRM.CRMModel context = new DAL.CRM.CRMModel())
             {
+                context.Configuration.ProxyCreationEnabled = false;
                 return context.Prospectos.Where(x=>x.id== id).FirstOrDefault();
             }
         }

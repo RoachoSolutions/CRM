@@ -13,7 +13,7 @@ namespace RoachoSLN.Web.MVC.Helpers
     {
         public static string ContentArea(this UrlHelper url, string path)
         {
-            var modulName = url.RequestContext.RouteData.DataTokens["area"];
+            var modulName = url.RequestContext.RouteData.DataTokens["area"];            
             string modulContentLoad = "";
 
             if (modulName != null)
@@ -35,6 +35,30 @@ namespace RoachoSLN.Web.MVC.Helpers
             }
 
             return string.Empty;
+        }
+
+        public static string CustomUrlArea(this UrlHelper url, string path,  bool controller = false)
+        {
+            var modulName = url.RequestContext.RouteData.DataTokens["area"];
+            var controllerName = url.RequestContext.RouteData.Values["controller"];
+            string modulContentLoad = "";
+
+
+            if (modulName == null)
+            {
+                return string.Empty;
+            }
+
+            modulContentLoad = "/" + modulName;
+
+            if (controller && controllerName!=null)
+            {
+                modulContentLoad += "/" + controllerName;
+            }
+
+            modulContentLoad += "/" + path;
+
+            return modulContentLoad;
         }
 
     }

@@ -41,7 +41,7 @@ namespace CRM
             bundles.Add(new ScriptBundle("~/bundles/inspinia").Include(
                       "~/Scripts/plugins/metisMenu/metisMenu.min.js",
                       "~/Scripts/plugins/pace/pace.min.js",
-                      "~/Scripts/app/inspinia.min.js"));
+                      "~/Scripts/app/inspinia.js"));
 
             // Inspinia skin config script
             bundles.Add(new ScriptBundle("~/bundles/skinConfig").Include(
@@ -108,16 +108,11 @@ namespace CRM
 
             // dataTables css styles
             bundles.Add(new StyleBundle("~/Content/plugins/dataTables/dataTablesStyles").Include(
-                      "~/Content/plugins/dataTables/dataTables.bootstrap.css",
-                      "~/Content/plugins/dataTables/dataTables.responsive.css",
-                      "~/Content/plugins/dataTables/dataTables.tableTools.min.css"));
+                      "~/Content/plugins/dataTables/datatables.min.css"));
 
             // dataTables 
             bundles.Add(new ScriptBundle("~/plugins/dataTables").Include(
-                      "~/Scripts/plugins/dataTables/jquery.dataTables.js",
-                      "~/Scripts/plugins/dataTables/dataTables.bootstrap.js",
-                      "~/Scripts/plugins/dataTables/dataTables.responsive.js",
-                      "~/Scripts/plugins/dataTables/dataTables.tableTools.min.js"));
+                      "~/Scripts/plugins/dataTables/datatables.min.js"));
 
             // jeditable 
             bundles.Add(new ScriptBundle("~/plugins/jeditable").Include(
@@ -357,6 +352,66 @@ namespace CRM
             // Slick carousel
             bundles.Add(new ScriptBundle("~/plugins/slick").Include(
                       "~/Scripts/plugins/slick/slick.min.js"));
+
+            // Ladda buttons Styless
+            bundles.Add(new StyleBundle("~/plugins/laddaStyles").Include(
+                      "~/Content/plugins/ladda/ladda-themeless.min.css"));
+
+            // Ladda buttons
+            bundles.Add(new ScriptBundle("~/plugins/ladda").Include(
+                      "~/Scripts/plugins/ladda/spin.min.js",
+                      "~/Scripts/plugins/ladda/ladda.min.js",
+                      "~/Scripts/plugins/ladda/ladda.jquery.min.js"));
+
+            // Dotdotdot buttons
+            bundles.Add(new ScriptBundle("~/plugins/truncate").Include(
+                      "~/Scripts/plugins/dotdotdot/jquery.dotdotdot.min.js"));
+
+            // Touch Spin Styless
+            bundles.Add(new StyleBundle("~/plugins/touchSpinStyles").Include(
+                      "~/Content/plugins/touchspin/jquery.bootstrap-touchspin.min.css"));
+
+            // Touch Spin
+            bundles.Add(new ScriptBundle("~/plugins/touchSpin").Include(
+                      "~/Scripts/plugins/touchspin/jquery.bootstrap-touchspin.min.js"));
+
+            // Tour Styless
+            bundles.Add(new StyleBundle("~/plugins/tourStyles").Include(
+                      "~/Content/plugins/bootstrapTour/bootstrap-tour.min.css"));
+
+            // Tour Spin
+            bundles.Add(new ScriptBundle("~/plugins/tour").Include(
+                      "~/Scripts/plugins/bootstrapTour/bootstrap-tour.min.js"));
+
+            // i18next Spin
+            bundles.Add(new ScriptBundle("~/plugins/i18next").Include(
+                      "~/Scripts/plugins/i18next/i18next.min.js"));
+
+            // Clipboard Spin
+            bundles.Add(new ScriptBundle("~/plugins/clipboard").Include(
+                      "~/Scripts/plugins/clipboard/clipboard.min.js"));
+
+            // c3 Styless
+            bundles.Add(new StyleBundle("~/plugins/c3Styles").Include(
+                      "~/Content/plugins/c3/c3.min.css"));
+
+            // c3 Spin
+            bundles.Add(new ScriptBundle("~/plugins/c3").Include(
+                      "~/Scripts/plugins/c3/c3.min.js"));
+
+            // d3 Spin
+            bundles.Add(new ScriptBundle("~/plugins/d3").Include(
+                      "~/Scripts/plugins/d3/d3.min.js"));
+
+            // Markdown Styless
+            bundles.Add(new StyleBundle("~/plugins/markdownStyles").Include(
+                      "~/Content/plugins/bootstrap-markdown/bootstrap-markdown.min.css"));
+
+            // Markdown Spin
+            bundles.Add(new ScriptBundle("~/plugins/markdown").Include(
+                      "~/Scripts/plugins/bootstrap-markdown/bootstrap-markdown.js",
+                      "~/Scripts/plugins/bootstrap-markdown/markdown.js"));
+
 
 
 

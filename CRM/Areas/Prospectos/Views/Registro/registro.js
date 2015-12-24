@@ -1,4 +1,4 @@
-﻿function termino(xhr, status, entityName) {
+﻿function termino(xhr, status) {
     debugger;
     alert(datos);
 }

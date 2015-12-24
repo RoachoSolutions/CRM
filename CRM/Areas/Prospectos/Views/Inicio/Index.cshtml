@@ -12,8 +12,7 @@
                     </div>
                     <table class="table table-striped table-bordered table-hover " id="editable">
                         <thead>
-                            <tr>
-                                <th>Id</th>
+                            <tr>                                
                                 <th>Nombre</th>
                                 <th>Telefono</th>
                                 <th>Correo</th>
@@ -26,8 +25,7 @@
                                 {
                                     foreach (RoachoSLN.Entidades.CRM.Prospectos _prospecto in Model)
                                     {
-                                        <tr data-id="@_prospecto.id">
-                                            <td>@_prospecto.id</td>
+                                        <tr data-id="@_prospecto.id">                                            
                                             <td>@_prospecto.nombre @_prospecto.apellido1 @_prospecto.apellido2</td>
                                             <td>@_prospecto.telefono</td>
                                             <td>@_prospecto.correo</td>
@@ -38,8 +36,7 @@
                             }
                         </tbody>
                         <tfoot>
-                            <tr>
-                                <th>Id</th>
+                            <tr>                                
                                 <th>Nombre</th>
                                 <th>Telefono</th>
                                 <th>Correo</th>
@@ -58,22 +55,26 @@
 
 @section Styles {
     @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+<link href="@Url.ContentArea("/Views/Inicio/inicio.css")" rel="stylesheet" />
 }
 
 
 @section Scripts {
     @Scripts.Render("~/plugins/jeditable")
     @Scripts.Render("~/plugins/dataTables")
+    <script src="@Url.ContentArea("/Views/Inicio/inicio.js")"></script>    
 
     <script type="text/javascript">
         $(document).ready(function () {
 
             /* Init DataTables */
-            var oTable = $('#editable').dataTable();
+            var oTable = $('#editable').DataTable();
 
             $("#editable tbody tr").dblclick(function () {
                 var id = $(this).attr("data-id");
-                window.location.href = "@Url.Action("Editar", "Registro", new { area = "Prospectos" })" + "/" +  id;
+                //window.location.href = "@Url.Action("Editar", "Registro", new { area = "Prospectos" })" + "/" + id;
+                window.location.href = "@Url.CustomUrlArea("ID", false)" + "/" + id;
+                ;
             });
 
             ///* Apply the jEditable handlers to the table */
@@ -96,6 +97,6 @@
 
         });
 
-      
+
     </script>
 }

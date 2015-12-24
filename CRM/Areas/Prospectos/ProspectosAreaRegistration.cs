@@ -14,6 +14,13 @@ namespace CRM.Areas.Prospectos
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
+
+            context.MapRoute(
+                "Prospectos_view",
+                "Prospectos/id/{id}",
+                new {controller="Inicio",action= "Detalle", id = UrlParameter.Optional }
+            );
+
             context.MapRoute(
                 "Prospectos_default",
                 "Prospectos/{controller}/{action}/{id}",

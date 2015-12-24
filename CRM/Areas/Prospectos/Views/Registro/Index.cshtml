@@ -1,29 +1,46 @@
 ﻿@model RoachoSLN.Entidades.CRM.Prospectos
+@{
+    bool _esnuevo = false;
+    if (Model.id == Guid.Empty)
+    {
+        _esnuevo = true;
+    }
+}
 
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>Nuevo Prospecto</h5>
-                    <div class="ibox-tools">                        
-                        @{
-                            if (@Model != null)
-                            {
-                                <div>  Dueño: @Model.iddueño</div>
-                            }
+                    @{
+                        if (_esnuevo)
+                        {
+                            <h5>
+                                Nuevo Prospecto
+                            </h5>
                         }
+                        else
+                        {
+                            <h5>
+                                Editar Prospecto
+                            </h5>
+                        }
+                    }
+                    <div class="ibox-tools">
+                        <span>  Dueño: @Model.iddueño</span>
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
                     </div>
                     <div class="ibox-content">
-                        <div id="testAjax"></div>
-                        @using (Ajax.BeginForm("Guardar", "Registro",new { area = "Prospectos" },
-                            new AjaxOptions {  HttpMethod ="POST",OnSuccess= "termino(xhr, status, 'Person')" }, new { @class = "form-horizontal" }))
+                        @using (Ajax.BeginForm("Guardar", "Registro", new { area = "Prospectos" },
+new AjaxOptions { HttpMethod = "POST", OnSuccess = "termino(xhr, status)" }, new { @class = "form-horizontal" }))
                         {
                             @Html.ValidationSummary(true)
-                           
+
                             if (@Model != null)
                             {
-                                if (Model.convertido!=null && Model.convertido==true)
+                                if (Model.convertido != null && Model.convertido == true)
                                 {
                                     <div class="col-sm-12">Convertido</div>
                                 }
@@ -57,7 +74,7 @@
                                 </div>
                             </div>
                             <div class="hr-line-dashed visible-sm-block visible-xs-block"></div>
-                            
+
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     @Html.ValidationMessageFor(m => m.telefono)
@@ -101,17 +118,17 @@
                                     @Html.ValidationMessageFor(m => m.ciudad)
                                     @Html.LabelFor(m => m.ciudad, new { @class = "col-sm-4 control-label" })
                                     <div class="col-sm-8">@Html.TextBoxFor(m => m.ciudad, new { @class = "form-control" }) </div>
-                                </div>  
+                                </div>
                                 <div class="form-group">
                                     @Html.ValidationMessageFor(m => m.estado)
                                     @Html.LabelFor(m => m.estado, new { @class = "col-sm-4 control-label" })
                                     <div class="col-sm-8">@Html.TextBoxFor(m => m.estado, new { @class = "form-control" }) </div>
-                                </div>  
+                                </div>
                                 <div class="form-group">
                                     @Html.ValidationMessageFor(m => m.codigopostal)
                                     @Html.LabelFor(m => m.codigopostal, new { @class = "col-sm-4 control-label" })
                                     <div class="col-sm-8">@Html.TextBoxFor(m => m.codigopostal, new { @class = "form-control" }) </div>
-                                </div> 
+                                </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
@@ -128,7 +145,7 @@
                                     @Html.ValidationMessageFor(m => m.calificacion)
                                     @Html.LabelFor(m => m.calificacion, new { @class = "col-sm-4 control-label" })
                                     <div class="col-sm-8">@Html.TextBoxFor(m => m.calificacion, new { @class = "form-control" }) </div>
-                                </div>                               
+                                </div>
                                 <div class="form-group">
                                     @Html.ValidationMessageFor(m => m.iddueño)
                                     @Html.LabelFor(m => m.iddueño, new { @class = "col-sm-4 control-label" })
@@ -138,7 +155,7 @@
                                     @Html.ValidationMessageFor(m => m.estatus)
                                     @Html.LabelFor(m => m.estatus, new { @class = "col-sm-4 control-label" })
                                     <div class="col-sm-8">@Html.DropDownListFor(m => m.estatus, RoachoSLN.BOL.CRM.DropDownList.ListaEstatusProspecto(), new { @class = "form-control" }) </div>
-                                </div>                               
+                                </div>
                             </div>
                             <div class="form-group">
                                 @Html.ValidationMessageFor(m => m.textoextra)
@@ -159,9 +176,41 @@
     </div>
 </div>
 
-
-@section scripts{
-    <script src="@Url.ContentArea("/Views/Registro/registro.js")"></script>
+@{
+    if (!_esnuevo)
+    {
+        Html.RenderPartial("_archivos", Model.ProspectoArchivo.ToList());
+        Html.RenderPartial("_notas", Model.ProspectoNota.ToList());
+        Html.RenderPartial("_historial", Model.ProspectoHistorico.ToList());
+        
     }
+}
 
-   
+
+@section Styles {
+    @Styles.Render("~/Content/plugins/dropzone/dropZoneStyles")
+    <link href="@Url.ContentArea("/Views/Registro/registro.css")" rel="stylesheet"  />
+}
+
+@section scripts{    
+    @Scripts.Render("~/plugins/dropZone")
+    <script src="@Url.ContentArea("/Views/Registro/registro.js")"></script>    
+
+    <script>
+        $(document).ready(function () {
+            if ($("#archivosprospecto").length > 0) {
+                Dropzone.options.dropzoneForm = {
+                    maxFiles: 25,
+                    Init:function(){
+                        this.on("maxfilesexceeded", function (data) {
+                            debugger;
+                            var res = eval('(' + data.xhr.responseText + ')');
+                        });
+                    }
+                }
+        });
+    </script>
+}
+
+
+
