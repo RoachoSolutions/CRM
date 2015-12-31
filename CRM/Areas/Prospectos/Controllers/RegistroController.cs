@@ -15,13 +15,15 @@ namespace CRM.Areas.Prospectos.Controllers
     {
         // GET: Prospectos/Registro
         public ActionResult Index()
-        {           
+        {
+            ViewBag.Title = "Prospecto";
             return View(new RoachoSLN.Entidades.CRM.Prospectos() { id=Guid.Empty});
         }
 
         public ActionResult Editar(Guid id)
-        {            
-            return View("Index", RoachoSLN.BOL.CRM.Prospectos.Obtener(id));
+        {
+            ViewBag.Title = "Prospecto";
+            return View("Index", RoachoSLN.BOL.CRM.Prospectos.Obtener(id,true));
         }
 
 

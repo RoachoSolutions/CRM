@@ -1,0 +1,3 @@
+﻿function MostrarMasInfo() {
+    $("#dvmore").toggle();
+}

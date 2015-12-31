@@ -22,14 +22,14 @@
                     <div class="row">
                         <div class="col-lg-5">
                             <dl class="dl-horizontal">
-                                <dt>@Html.DisplayNameFor(m=>m.nombre):</dt>
+                                <dt>@Html.DisplayNameFor(m => m.nombre):</dt>
                                 <dd>@Model.nombre</dd>
                                 <dt>@Html.DisplayNameFor(m => m.apellido1):</dt>
                                 <dd>@Model.apellido1</dd>
                                 <dt>@Html.DisplayNameFor(m => m.apellido2):</dt>
                                 <dd>@Model.apellido2</dd>
                                 <dt>@Html.DisplayNameFor(m => m.idorigen):</dt>
-                                <dd>@RoachoSLN.BOL.CRM.CatCache.Origenes.Where(x=>x.id== Model.idorigen.GetValueOrDefault()).DefaultIfEmpty(new RoachoSLN.Entidades.CRM.CatOrigenes()).FirstOrDefault().origen</dd>
+                                <dd>@RoachoSLN.BOL.CRM.CatCache.Origenes.Where(x => x.id == Model.idorigen.GetValueOrDefault()).DefaultIfEmpty(new RoachoSLN.Entidades.CRM.CatOrigenes()).FirstOrDefault().origen</dd>
                                 <dt>@Html.DisplayNameFor(m => m.idindustria):</dt>
                                 <dd>@RoachoSLN.BOL.CRM.CatCache.Industrias.Where(x => x.id == Model.idindustria.GetValueOrDefault()).DefaultIfEmpty(new RoachoSLN.Entidades.CRM.CatIndustrias()).FirstOrDefault().industria</dd>
                             </dl>
@@ -49,7 +49,7 @@
                             </dl>
                         </div>
                     </div>
-                    <div class="row">                       
+                    <div class="row">
                         <div class="col-lg-12" id="dvmore" style="display:none">
                             <div class="col-lg-5">
                                 <dl class="dl-horizontal">
@@ -84,19 +84,6 @@
                             <a onclick="MostrarMasInfo();"><i class="fa fa-ellipsis-h"></i></a>
                         </div>
                     </div>
-                    @*<div class="row">
-                        <div class="col-lg-12">
-                            <dl class="dl-horizontal">
-                                <dt>Completed:</dt>
-                                <dd>
-                                    <div class="progress progress-striped active m-b-sm">
-                                        <div style="width: 60%;" class="progress-bar"></div>
-                                    </div>
-                                    <small>Project completed in <strong>60%</strong>. Remaining close the project, sign a contract and invoice.</small>
-                                </dd>
-                            </dl>
-                        </div>
-                    </div>*@
                     <div class="row m-t-sm">
                         <div class="col-lg-12">
                             <div class="panel blank-panel">
@@ -112,82 +99,35 @@
                                 <div class="panel-body">
 
                                     <div class="tab-content">
-                                        <div class="tab-pane active" id="tab-1">
+                                        <div class="tab-pane active" id="tab-1">                                                 
                                             <div class="feed-activity-list">
+                                                <div class="feed-element">
+                                                    <label class="font-noraml">Agregar Nota:</label>
+                                                    <div class="media-body ">                                                        
+                                                        <textarea maxlength="500" style="width:100%"></textarea>
+                                                    </div>
+                                                    <div class="pull-right">
+                                                        <a class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Agregar</a>
+                                                    </div>
+                                                </div>
                                                 <div class="feed-element">
                                                     <a href="#" class="pull-left">
                                                         <img alt="image" class="img-circle" src="img/a2.jpg">
                                                     </a>
-                                                    <div class="media-body ">
-                                                        <small class="pull-right">2h ago</small>
-                                                        <strong>Mark Johnson</strong> posted message on <strong>Monica Smith</strong> site. <br>
-                                                        <small class="text-muted">Today 2:10 pm - 12.06.2014</small>
-                                                        <div class="well">
-                                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                                                            Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                                                    @foreach (RoachoSLN.Entidades.CRM.ProspectoNota _nota in Model.ProspectoNota)
+                                                    {
+                                                        <div class="media-body ">
+                                                            <small class="pull-right">2h ago</small>
+                                                            <strong>Mark Johnson</strong> posted message on <strong>Monica Smith</strong> site. <br>
+                                                            <small class="text-muted">@_nota.fecha</small>
+                                                            <div class="well">
+                                                                @_nota.nota
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div class="feed-element">
-                                                    <a href="#" class="pull-left">
-                                                        <img alt="image" class="img-circle" src="img/a3.jpg">
-                                                    </a>
-                                                    <div class="media-body ">
-                                                        <small class="pull-right">2h ago</small>
-                                                        <strong>Janet Rosowski</strong> add 1 photo on <strong>Monica Smith</strong>. <br>
-                                                        <small class="text-muted">2 days ago at 8:30am</small>
-                                                    </div>
-                                                </div>
-                                                <div class="feed-element">
-                                                    <a href="#" class="pull-left">
-                                                        <img alt="image" class="img-circle" src="img/a4.jpg">
-                                                    </a>
-                                                    <div class="media-body ">
-                                                        <small class="pull-right text-navy">5h ago</small>
-                                                        <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
-                                                        <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
-                                                        <div class="actions">
-                                                            <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
-                                                            <a class="btn btn-xs btn-white"><i class="fa fa-heart"></i> Love</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="feed-element">
-                                                    <a href="#" class="pull-left">
-                                                        <img alt="image" class="img-circle" src="img/a5.jpg">
-                                                    </a>
-                                                    <div class="media-body ">
-                                                        <small class="pull-right">2h ago</small>
-                                                        <strong>Kim Smith</strong> posted message on <strong>Monica Smith</strong> site. <br>
-                                                        <small class="text-muted">Yesterday 5:20 pm - 12.06.2014</small>
-                                                        <div class="well">
-                                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                                                            Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="feed-element">
-                                                    <a href="#" class="pull-left">
-                                                        <img alt="image" class="img-circle" src="img/profile.jpg">
-                                                    </a>
-                                                    <div class="media-body ">
-                                                        <small class="pull-right">23h ago</small>
-                                                        <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
-                                                        <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
-                                                    </div>
-                                                </div>
-                                                <div class="feed-element">
-                                                    <a href="#" class="pull-left">
-                                                        <img alt="image" class="img-circle" src="img/a7.jpg">
-                                                    </a>
-                                                    <div class="media-body ">
-                                                        <small class="pull-right">46h ago</small>
-                                                        <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
-                                                        <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
-                                                    </div>
+                                                    }
+                                                    
                                                 </div>
                                             </div>
-
                                         </div>
                                         <div class="tab-pane" id="tab-2">
 
@@ -196,11 +136,11 @@
                                                     <tr>
                                                         <th>Usuario</th>
                                                         <th>Movimiento</th>
-                                                        <th>Fecha</th>                                                        
+                                                        <th>Fecha</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach(RoachoSLN.Entidades.CRM.ProspectoHistorico _historial in Model.ProspectoHistorico)
+                                                    @foreach (RoachoSLN.Entidades.CRM.ProspectoHistorico _historial in Model.ProspectoHistorico)
                                                     {
                                                         <tr>
                                                             <td>
@@ -210,7 +150,7 @@
                                                                 @_historial.movimiento
                                                             </td>
                                                             <td>
-                                                                @_historial.fecha
+                                                                @DateTimeUtils.TiempoTrascurrido(@_historial.fecha,DateTime.Now)
                                                             </td>
                                                         </tr>
                                                     }
@@ -232,10 +172,10 @@
 </div>
 
 
-@section Styles {    
-    <link href="@Url.ContentArea("/Views/Inicio/Detalle.css")" rel="stylesheet" />
+@section Styles {
+    <link href="@Url.ContentArea("/Views/Detalle/Detalle.css")" rel="stylesheet" />
 }
 
-@section scripts{    
-    <script src="@Url.ContentArea("/Views/Inicio/Detalle.js")"></script>
+@section scripts{
+    <script src="@Url.ContentArea("/Views/Detalle/Detalle.js")"></script>
 }

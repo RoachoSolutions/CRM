@@ -1,50 +1,67 @@
 ﻿@model List<RoachoSLN.Entidades.CRM.Prospectos>
 
 
+<div class="row">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content animated fadeInUp">
 
-<div class="wrapper wrapper-content animated fadeInRight">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="ibox float-e-margins">
-                <div class="ibox-content">
-                    <div class="">
-                        <a href="~/Prospectos/Registro" class="btn btn-primary ">Nuevo Prospecto</a>
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Tus Prospectos</h5>
+                    <div class="ibox-tools">                       
+                        <a href="~/Prospectos/Registro" class="btn btn-primary btn-xs">Nuevo Prospecto</a>
                     </div>
-                    <table class="table table-striped table-bordered table-hover " id="editable">
-                        <thead>
-                            <tr>                                
-                                <th>Nombre</th>
-                                <th>Telefono</th>
-                                <th>Correo</th>
-                                <th>Estado</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @{
-                                if (Model != null)
-                                {
-                                    foreach (RoachoSLN.Entidades.CRM.Prospectos _prospecto in Model)
+                </div>
+                <div class="ibox-content">
+                    <div class="row m-b-sm m-t-sm">
+                        <div class="col-md-1">
+                            <button type="button" id="loading-example-btn" class="btn btn-white btn-sm"><i class="fa fa-refresh"></i> Refresh</button>
+                        </div>
+                        <div class="col-md-11">
+                            <div class="input-group">
+                                <input type="text" placeholder="Search" class="input-sm form-control"> <span class="input-group-btn">
+                                    <button type="button" class="btn btn-sm btn-primary"> Go!</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-list">
+
+                        <table class="table table-hover" id="tblprospecto">
+                            <tbody>
+                                @{
+                                    if (Model != null)
                                     {
-                                        <tr data-id="@_prospecto.id">                                            
-                                            <td>@_prospecto.nombre @_prospecto.apellido1 @_prospecto.apellido2</td>
-                                            <td>@_prospecto.telefono</td>
-                                            <td>@_prospecto.correo</td>
-                                            <td>@_prospecto.estatus</td>
-                                        </tr>
+                                        foreach (RoachoSLN.Entidades.CRM.Prospectos _prospecto in Model)
+                                        {
+                                            <tr data-id="@_prospecto.id">
+                                                <td class="project-status">
+                                                    @{ 
+                                                        var estatus = @RoachoSLN.BOL.CRM.CatCache.ProspectoEstatus.Where(x => x.id == _prospecto.estatus.GetValueOrDefault()).DefaultIfEmpty(new RoachoSLN.Entidades.CRM.CatProspectoEstatus()).FirstOrDefault();
+                                                    }
+                                                    <span class="@estatus.estilo">@estatus.estatus</span>
+                                                </td>
+                                                <td class="project-title">
+                                                    <a href="@Url.CustomUrlArea("ID", false)/@_prospecto.id">@_prospecto.compania</a>
+                                                    <br />
+                                                    <small>Fecha de creacion @_prospecto.fec_reg</small>
+                                                </td>
+                                                <td>@_prospecto.nombre @_prospecto.apellido1 @_prospecto.apellido2</td>
+                                                <td>@_prospecto.telefono</td>
+                                                <td>@_prospecto.correo</td>
+                                                <td class="project-actions">
+                                                    <a href="@Url.CustomUrlArea("ID", false)/@_prospecto.id" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> Ver </a>
+                                                    <a href="@Url.Action("Editar", "Registro", new { area = "Prospectos" })/@_prospecto.id" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Editar </a>
+                                                </td>                                            
+                                            </tr>
+                                        }
                                     }
                                 }
-                            }
-                        </tbody>
-                        <tfoot>
-                            <tr>                                
-                                <th>Nombre</th>
-                                <th>Telefono</th>
-                                <th>Correo</th>
-                                <th>Estado</th>
-                            </tr>
-                        </tfoot>
-                    </table>
-
+                            </tbody>
+                            
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -52,51 +69,21 @@
 </div>
 
 
-
-@section Styles {
-    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
-<link href="@Url.ContentArea("/Views/Inicio/inicio.css")" rel="stylesheet" />
-}
+    @section Styles {        
+        <link href="@Url.ContentArea("/Views/Inicio/inicio.css")" rel="stylesheet" />
+    }
 
 
-@section Scripts {
-    @Scripts.Render("~/plugins/jeditable")
-    @Scripts.Render("~/plugins/dataTables")
-    <script src="@Url.ContentArea("/Views/Inicio/inicio.js")"></script>    
+    @section Scripts {        
+        <script src="@Url.ContentArea("/Views/Inicio/inicio.js")"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-            /* Init DataTables */
-            var oTable = $('#editable').DataTable();
-
-            $("#editable tbody tr").dblclick(function () {
-                var id = $(this).attr("data-id");
-                //window.location.href = "@Url.Action("Editar", "Registro", new { area = "Prospectos" })" + "/" + id;
-                window.location.href = "@Url.CustomUrlArea("ID", false)" + "/" + id;
-                ;
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#editable tbody tr").dblclick(function () {
+                    var id = $(this).attr("data-id");
+                    //window.location.href = "@Url.Action("Editar", "Registro", new { area = "Prospectos" })" + "/" + id;
+                    window.location.href = "@Url.CustomUrlArea("ID", false)" + "/" + id;                    
+                });
             });
-
-            ///* Apply the jEditable handlers to the table */
-            //oTable.$('td').editable( '../example_ajax.php', {
-            //    "callback": function( sValue, y ) {
-            //        var aPos = oTable.fnGetPosition( this );
-            //        oTable.fnUpdate( sValue, aPos[0], aPos[1] );
-            //    },
-            //    "submitdata": function ( value, settings ) {
-            //        return {
-            //            "row_id": this.parentNode.getAttribute('id'),
-            //            "column": oTable.fnGetPosition( this )[2]
-            //        };
-            //    },
-
-            //    "width": "90%",
-            //    "height": "100%"
-            //} );
-
-
-        });
-
-
-    </script>
-}
+        </script>
+    }

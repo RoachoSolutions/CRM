@@ -18,13 +18,13 @@ namespace CRM.Areas.Prospectos
             context.MapRoute(
                 "Prospectos_view",
                 "Prospectos/id/{id}",
-                new {controller="Inicio",action= "Detalle", id = UrlParameter.Optional }
+                new {controller= "Detalle", action= "Index", id = UrlParameter.Optional }
             );
 
             context.MapRoute(
                 "Prospectos_default",
                 "Prospectos/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { controller = "Inicio", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

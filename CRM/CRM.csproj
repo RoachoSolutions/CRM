@@ -114,6 +114,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Prospectos\Views\Detalle\Detalle.css" />
+    <Content Include="Areas\Prospectos\Views\Detalle\Detalle.js" />
+    <Content Include="Areas\Prospectos\Views\Detalle\Index.cshtml" />
     <Content Include="Areas\Prospectos\Views\Inicio\inicio.css" />
     <Content Include="Areas\Prospectos\Views\Inicio\inicio.js" />
     <Content Include="Areas\Prospectos\Views\Registro\registro.css" />
@@ -749,7 +752,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Clientes\ClientesAreaRegistration.cs" />
     <Compile Include="Areas\Clientes\Controllers\InicioController.cs" />
-    <Compile Include="Areas\Prospectos\Controllers\JsonController.cs" />
+    <Compile Include="Areas\Prospectos\Controllers\DetalleController.cs" />
     <Compile Include="Areas\Prospectos\Controllers\InicioController.cs" />
     <Compile Include="Areas\Prospectos\Controllers\RegistroController.cs" />
     <Compile Include="Areas\Prospectos\ProspectosAreaRegistration.cs" />
@@ -789,7 +792,6 @@
     <Folder Include="Areas\Clientes\Models\" />
     <Folder Include="Areas\Clientes\Views\Shared\" />
     <Folder Include="Areas\Prospectos\Models\" />
-    <Folder Include="Areas\Prospectos\Views\Json\" />
     <Folder Include="Areas\Prospectos\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
@@ -805,6 +807,10 @@
     <ProjectReference Include="..\RoachoSLN.Entidades.Resultados\RoachoSLN.Entidades.Resultados.csproj">
       <Project>{1a86e309-2859-42ff-9744-3fcd0c169eee}</Project>
       <Name>RoachoSLN.Entidades.Resultados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoachoSLN.Utils\RoachoSLN.Utils.csproj">
+      <Project>{93a57ff0-55a3-4c8b-a90d-041471d05a37}</Project>
+      <Name>RoachoSLN.Utils</Name>
     </ProjectReference>
     <ProjectReference Include="..\RoachoSLN.Web.MVC.Attributes\RoachoSLN.Web.MVC.Attributes.csproj">
       <Project>{f0deb6bb-3ecc-4ca1-a651-73b63cb8c3c5}</Project>

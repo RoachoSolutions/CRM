@@ -6,17 +6,10 @@ using System.Web.Mvc;
 
 namespace CRM.Areas.Prospectos.Controllers
 {
-    public class InicioController : Controller
+    public class DetalleController : Controller
     {
-        // GET: Prospectos/Inicio
-        public ActionResult Index()
-        {
-            ViewBag.Title = "Prospecto";
-            List<RoachoSLN.Entidades.CRM.Prospectos> _prospectos = RoachoSLN.BOL.CRM.Prospectos.Lista();
-            return View(_prospectos);
-        }
-
-        public ActionResult Detalle(string id)
+        // GET: Prospectos/Detalle
+        public ActionResult Index(string id)
         {
             ViewBag.Title = "Prospecto";
             Guid _id;
@@ -25,10 +18,10 @@ namespace CRM.Areas.Prospectos.Controllers
             if (!Guid.TryParse(id, out _id))
                 return RedirectToAction("Index");
 
-            if (Guid.Empty==_id)
+            if (Guid.Empty == _id)
                 return RedirectToAction("Index");
 
-            _retvalue = RoachoSLN.BOL.CRM.Prospectos.Obtener(_id,true);
+            _retvalue = RoachoSLN.BOL.CRM.Prospectos.Obtener(_id, true);
             return View(_retvalue);
         }
     }

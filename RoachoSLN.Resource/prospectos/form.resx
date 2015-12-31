@@ -117,70 +117,73 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Prospecto_apellido1" xml:space="preserve">
-    <value>Last name</value>
+  <data name="apellido1" xml:space="preserve">
+    <value>Apellido</value>
   </data>
-  <data name="Prospecto_apellido2" xml:space="preserve">
-    <value />
+  <data name="apellido2" xml:space="preserve">
+    <value>Apellido 2</value>
   </data>
-  <data name="Prospecto_calificacion" xml:space="preserve">
-    <value />
+  <data name="calificacion" xml:space="preserve">
+    <value>Calificacion</value>
   </data>
-  <data name="Prospecto_calle" xml:space="preserve">
-    <value />
+  <data name="calle" xml:space="preserve">
+    <value>Calle</value>
   </data>
-  <data name="Prospecto_celular" xml:space="preserve">
-    <value />
+  <data name="celular" xml:space="preserve">
+    <value>Celular</value>
   </data>
-  <data name="Prospecto_ciudad" xml:space="preserve">
-    <value />
+  <data name="ciudad" xml:space="preserve">
+    <value>Ciudad</value>
   </data>
-  <data name="Prospecto_codigopostal" xml:space="preserve">
-    <value />
+  <data name="codigopostal" xml:space="preserve">
+    <value>Codigo Postal</value>
   </data>
-  <data name="Prospecto_convertido" xml:space="preserve">
-    <value />
+  <data name="compania" xml:space="preserve">
+    <value>Compañia</value>
   </data>
-  <data name="Prospecto_correo" xml:space="preserve">
-    <value />
+  <data name="convertido" xml:space="preserve">
+    <value>Convertido a Cliente</value>
   </data>
-  <data name="Prospecto_estado" xml:space="preserve">
-    <value />
+  <data name="correo" xml:space="preserve">
+    <value>Correo</value>
   </data>
-  <data name="Prospecto_estatus" xml:space="preserve">
-    <value />
+  <data name="estado" xml:space="preserve">
+    <value>Estado</value>
   </data>
-  <data name="Prospecto_iddueño" xml:space="preserve">
-    <value />
+  <data name="estatus" xml:space="preserve">
+    <value>Estatus</value>
   </data>
-  <data name="Prospecto_idindustria" xml:space="preserve">
-    <value />
+  <data name="iddueño" xml:space="preserve">
+    <value>Dueño</value>
   </data>
-  <data name="Prospecto_idorigen" xml:space="preserve">
-    <value />
+  <data name="idindustria" xml:space="preserve">
+    <value>Industria</value>
   </data>
-  <data name="Prospecto_ingresos" xml:space="preserve">
-    <value />
+  <data name="idorigen" xml:space="preserve">
+    <value>Origen</value>
   </data>
-  <data name="Prospecto_nombre" xml:space="preserve">
-    <value>Name</value>
+  <data name="ingresos" xml:space="preserve">
+    <value>Ingresos</value>
   </data>
-  <data name="Prospecto_numempleado" xml:space="preserve">
-    <value />
+  <data name="nombre" xml:space="preserve">
+    <value>Nombre</value>
   </data>
-  <data name="Prospecto_pagina" xml:space="preserve">
-    <value />
+  <data name="numempleado" xml:space="preserve">
+    <value>N° de empleados</value>
   </data>
-  <data name="Prospecto_skype" xml:space="preserve">
-    <value />
+  <data name="pagina" xml:space="preserve">
+    <value>Pagina</value>
   </data>
-  <data name="Prospecto_telefono" xml:space="preserve">
-    <value />
+  <data name="skype" xml:space="preserve">
+    <value>Skype</value>
   </data>
-  <data name="Prospecto_telefono2" xml:space="preserve">
-    <value />
+  <data name="telefono" xml:space="preserve">
+    <value>Telefono</value>
   </data>
-  <data name="Prospecto_textoextra" xml:space="preserve">
-    <value />
+  <data name="telefono2" xml:space="preserve">
+    <value>Telefono Extra</value>
+  </data>
+  <data name="textoextra" xml:space="preserve">
+    <value>Notas</value>
   </data>
 </root>

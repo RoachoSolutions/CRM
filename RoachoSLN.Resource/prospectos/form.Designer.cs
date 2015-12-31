@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RoachoSLN.Resource {
+namespace RoachoSLN.Resource.prospectos {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace RoachoSLN.Resource {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Resource_Propecto {
+    public class form {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resource_Propecto() {
+        internal form() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace RoachoSLN.Resource {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RoachoSLN.Resource.Resource_Propecto", typeof(Resource_Propecto).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RoachoSLN.Resource.prospectos.form", typeof(form).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -120,6 +120,15 @@ namespace RoachoSLN.Resource {
         public static string codigopostal {
             get {
                 return ResourceManager.GetString("codigopostal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compañia.
+        /// </summary>
+        public static string compania {
+            get {
+                return ResourceManager.GetString("compania", resourceCulture);
             }
         }
         

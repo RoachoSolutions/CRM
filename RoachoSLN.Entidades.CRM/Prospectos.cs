@@ -28,84 +28,90 @@ namespace RoachoSLN.Entidades.CRM
         public Guid? idprefijo { get; set; }
 
         [DataMember]
+        [Required(ErrorMessage = "please enter company name")]
+        [StringLength(200)]
+        [Display(Name = "compania", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
+        public string compania { get; set; }
+
+        [DataMember]
         [Required(ErrorMessage = "please enter username")]
         [StringLength(100)]
-        [Display(Name = "nombre", ResourceType =typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "nombre", ResourceType =typeof(RoachoSLN.Resource.prospectos.form))]
         public string nombre { get; set; }
 
         [StringLength(100)]
-        [Display(Name = "apellido1", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "apellido1", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
         public string apellido1 { get; set; }
 
         [StringLength(100)]
-        [Display(Name = "apellido2", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "apellido2", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
         public string apellido2 { get; set; }
 
         [StringLength(12)]
-        [Display(Name = "telefono", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "telefono", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
         public string telefono { get; set; }
 
         [StringLength(12)]
-        [Display(Name = "telefono2", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "telefono2", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
         public string telefono2 { get; set; }
 
         [StringLength(12)]
-        [Display(Name = "celular", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "celular", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
         public string celular { get; set; }
 
         [StringLength(100)]
-        [Display(Name = "correo", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "correo", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
         public string correo { get; set; }
 
         [StringLength(100)]
-        [Display(Name = "pagina", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "pagina", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
         public string pagina { get; set; }
 
         [StringLength(100)]
-        [Display(Name = "skype", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "skype", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
         public string skype { get; set; }
 
         [StringLength(250)]
-        [Display(Name = "calle", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "calle", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
         public string calle { get; set; }
 
         [StringLength(100)]
-        [Display(Name = "ciudad", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "ciudad", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
         public string ciudad { get; set; }
 
-        [Display(Name = "estado", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "estado", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
         public Guid? estado { get; set; }
 
         [StringLength(5)]
-        [Display(Name = "codigopostal", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "codigopostal", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
         public string codigopostal { get; set; }
 
-        [Display(Name = "idorigen", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "idorigen", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
         public Guid? idorigen { get; set; }
 
-        [Display(Name = "idindustria", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "idindustria", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
         public Guid? idindustria { get; set; }
 
-        [Display(Name = "ingresos", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "ingresos", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
         public decimal? ingresos { get; set; }
 
-        [Display(Name = "numempleado", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "numempleado", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
         public int? numempleado { get; set; }
 
-        [Display(Name = "calificacion", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "calificacion", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
         public int? calificacion { get; set; }
 
         [Column(TypeName = "text")]
-        [Display(Name = "textoextra", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "textoextra", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
         public string textoextra { get; set; }
 
-        [Display(Name = "iddueño", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "iddueño", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
         public Guid? iddueño { get; set; }
 
-        [Display(Name = "estatus", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "estatus", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
         public Guid? estatus { get; set; }
 
-        [Display(Name = "convertido", ResourceType = typeof(RoachoSLN.Resource.Resource_Propecto))]
+        [Display(Name = "convertido", ResourceType = typeof(RoachoSLN.Resource.prospectos.form))]
         public bool? convertido { get; set; }
 
         [IgnoreDataMember]

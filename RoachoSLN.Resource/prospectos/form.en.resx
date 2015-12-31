@@ -121,7 +121,7 @@
     <value>Apellido</value>
   </data>
   <data name="apellido2" xml:space="preserve">
-    <value>Apellido 2</value>
+    <value>LastName</value>
   </data>
   <data name="calificacion" xml:space="preserve">
     <value>Calificacion</value>
@@ -137,6 +137,9 @@
   </data>
   <data name="codigopostal" xml:space="preserve">
     <value>Codigo Postal</value>
+  </data>
+  <data name="compania" xml:space="preserve">
+    <value>Company</value>
   </data>
   <data name="convertido" xml:space="preserve">
     <value>Convertido a Cliente</value>
@@ -163,7 +166,7 @@
     <value>Ingresos</value>
   </data>
   <data name="nombre" xml:space="preserve">
-    <value>Nombre</value>
+    <value>Name</value>
   </data>
   <data name="numempleado" xml:space="preserve">
     <value>N° de empleados</value>

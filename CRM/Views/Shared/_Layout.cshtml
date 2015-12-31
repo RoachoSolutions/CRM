@@ -20,6 +20,8 @@
     @Styles.Render("~/Content/css")
     @Styles.Render("~/font-awesome/css")
 
+    <!--sweetalert-->
+    @Styles.Render("~/plugins/sweetAlertStyles")
  
 
 </head>
@@ -62,9 +64,14 @@
     <!-- Skin config script - only for demo purpose-->
     @Scripts.Render("~/bundles/skinConfig")
 
+    <!--sweetalert-->
+    @Scripts.Render("~/plugins/sweetAlert")
+
     <!-- Handler for local scripts -->
     @RenderSection("scripts", required: false)
 
+    
+    
     <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 </body>

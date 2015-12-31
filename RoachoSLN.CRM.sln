@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Front", "Front", "{019ABBA8-E799-459F-A76E-3F474617DA98}"
 EndProject
@@ -32,6 +32,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoachoSLN.Web.MVC.Attributes", "RoachoSLN.Web.MVC.Attributes\RoachoSLN.Web.MVC.Attributes.csproj", "{F0DEB6BB-3ECC-4CA1-A651-73B63CB8C3C5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoachoSLN.Entidades.Resultados", "RoachoSLN.Entidades.Resultados\RoachoSLN.Entidades.Resultados.csproj", "{1A86E309-2859-42FF-9744-3FCD0C169EEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoachoSLN.Utils", "RoachoSLN.Utils\RoachoSLN.Utils.csproj", "{93A57FF0-55A3-4C8B-A90D-041471D05A37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{1A86E309-2859-42FF-9744-3FCD0C169EEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A86E309-2859-42FF-9744-3FCD0C169EEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A86E309-2859-42FF-9744-3FCD0C169EEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93A57FF0-55A3-4C8B-A90D-041471D05A37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93A57FF0-55A3-4C8B-A90D-041471D05A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93A57FF0-55A3-4C8B-A90D-041471D05A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93A57FF0-55A3-4C8B-A90D-041471D05A37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,5 +95,6 @@ Global
 		{738833F7-FB6C-4185-A0A1-645B3E9BAAE7} = {DE29E0F7-BC41-44E8-BFF3-0705819AFBCB}
 		{F0DEB6BB-3ECC-4CA1-A651-73B63CB8C3C5} = {F0B60644-E671-4D30-AAE2-72FEBD8114BB}
 		{1A86E309-2859-42FF-9744-3FCD0C169EEE} = {4266FE7D-398E-4C02-9D75-2CD1EFB39653}
+		{93A57FF0-55A3-4C8B-A90D-041471D05A37} = {F0B60644-E671-4D30-AAE2-72FEBD8114BB}
 	EndGlobalSection
 EndGlobal
