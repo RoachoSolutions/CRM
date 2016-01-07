@@ -45,7 +45,7 @@
                                                 <td class="project-title">
                                                     <a href="@Url.CustomUrlArea("ID", false)/@_prospecto.id">@_prospecto.compania</a>
                                                     <br />
-                                                    <small>Fecha de creacion @_prospecto.fec_reg</small>
+                                                    <small>Fecha de creacion @DateTimeUtils.TiempoTrascurrido(_prospecto.fec_reg, DateTime.Now)</small>
                                                 </td>
                                                 <td>@_prospecto.nombre @_prospecto.apellido1 @_prospecto.apellido2</td>
                                                 <td>@_prospecto.telefono</td>

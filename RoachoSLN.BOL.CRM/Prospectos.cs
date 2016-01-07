@@ -81,6 +81,26 @@ namespace RoachoSLN.BOL.CRM
             return _retValue;
         }
 
+        public static bool AgregarNota(string nota,Guid idProspecto,Guid idUsuario)
+        {
+            bool _retValue = false;
+            Entidades.CRM.ProspectoNota _nota = new Entidades.CRM.ProspectoNota() ;
+            _nota.nota = nota;
+            _nota.idProspecto = idProspecto;
+            _nota.fecha = DateTime.Now;
+            _nota.usuario = idUsuario;
+            using (DAL.CRM.CRMModel context = new DAL.CRM.CRMModel())
+            {
+                context.Entry(_nota).State = System.Data.Entity.EntityState.Added;
+
+                if (context.SaveChanges() > 0)
+                {
+                    _retValue = true;
+                }
+            }
+            return _retValue;
+        }
+
 
      
 

@@ -24,5 +24,23 @@ namespace CRM.Areas.Prospectos.Controllers
             _retvalue = RoachoSLN.BOL.CRM.Prospectos.Obtener(_id, true);
             return View(_retvalue);
         }
+
+        [HttpPost]
+        public ActionResult AgregarNota(string id,string nota)
+        {
+            RoachoSLN.Entidades.Resultados.ResultadoJson _retvalue = new RoachoSLN.Entidades.Resultados.ResultadoJson();
+            Guid _id;
+            if (Guid.TryParse(id,out _id))
+            {
+                RoachoSLN.BOL.CRM.Prospectos.AgregarNota(nota, _id, Guid.Empty);
+                _retvalue.status = 1;
+            }
+            else
+            {                
+                _retvalue.error = "Prospecto no valido";
+                _retvalue.status = 2;
+            }
+            return Json(_retvalue);
+        }
     }
 }

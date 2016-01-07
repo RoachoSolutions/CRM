@@ -8,6 +8,7 @@ namespace RoachoSLN.Utils
 {
     public class DateTimeUtils
     {
+
         public static string TiempoTrascurrido(DateTime? Start, DateTime? End)
         {
             if (!Start.HasValue)

@@ -37,6 +37,11 @@ namespace RoachoSLN.Web.MVC.Helpers
             return string.Empty;
         }
 
+        //public static string BaseURL(this UrlHelper url)
+        //{
+
+        //}
+
         public static string CustomUrlArea(this UrlHelper url, string path,  bool controller = false)
         {
             var modulName = url.RequestContext.RouteData.DataTokens["area"];
