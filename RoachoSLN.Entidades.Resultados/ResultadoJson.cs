@@ -18,5 +18,8 @@ namespace RoachoSLN.Entidades.Resultados
 
         [DataMember]
         public string error { get; set; }
+
+        [DataMember]
+        public string result { get; set; }
     }
 }

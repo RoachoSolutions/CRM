@@ -1,0 +1,14 @@
+﻿@model RoachoSLN.Entidades.CRM.ProspectoNota
+<div class="feed-element">
+    <a href="#" class="pull-left">
+        <img alt="image" class="img-circle" src="img/a2.jpg">
+    </a>
+    <div class="media-body ">
+        <small class="pull-right">2h ago</small>
+        <strong>Mark Johnson</strong> posted message on <strong>Monica Smith</strong> site. <br>
+        <small class="text-muted">@DateTimeUtils.TiempoTrascurrido(Model.fecha, DateTime.Now)</small>
+        <div class="well">
+            @Model.nota
+        </div>
+    </div>
+</div>

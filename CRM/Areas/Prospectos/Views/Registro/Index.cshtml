@@ -197,13 +197,13 @@ new AjaxOptions { HttpMethod = "POST", OnBegin = "return Validate()", OnSuccess 
 
 @section Styles {
     @Styles.Render("~/Content/plugins/dropzone/dropZoneStyles")
-    @Styles.Render("~/plugins/toastrStyles")
+    
     <link href="@Url.ContentArea("/Views/Registro/registro.css")" rel="stylesheet"  />
 }
 
 @section scripts{    
     @Scripts.Render("~/plugins/dropZone")
-    @Scripts.Render("~/plugins/toastr")
+    
     <script src="@Url.ContentArea("/Views/Registro/registro.js")"></script>     
 }
 

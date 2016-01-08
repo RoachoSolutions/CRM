@@ -20,9 +20,13 @@
     @Styles.Render("~/Content/css")
     @Styles.Render("~/font-awesome/css")
 
+    <!--toastr-->
+    @Styles.Render("~/plugins/toastrStyles")
+
     <!--sweetalert-->
     @Styles.Render("~/plugins/sweetAlertStyles")
  
+
 
 </head>
 <body>
@@ -67,9 +71,31 @@
     <!--sweetalert-->
     @Scripts.Render("~/plugins/sweetAlert")
 
+    <!--toastr-->
+    @Scripts.Render("~/plugins/toastr")
+
     <!--variables globales de configuracion-->
     <script>
-        var urlbase="@System.Configuration.ConfigurationManager.AppSettings["UrlBase"]";
+        var urlbase = "@System.Configuration.ConfigurationManager.AppSettings["UrlBase"]";
+        $(document).ready(function () {
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "progressBar": true,
+                "preventDuplicates": false,
+                "positionClass": "toast-top-right",
+                "onclick": null,
+                "showDuration": "400",
+                "hideDuration": "1000",
+                "timeOut": "7000",
+                "extendedTimeOut": "3500",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+        });
+       
     </script>
 
     <!-- Handler for local scripts -->

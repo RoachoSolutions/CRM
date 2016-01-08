@@ -1,6 +1,14 @@
 ﻿@model RoachoSLN.Entidades.CRM.Prospectos
 
 @Html.HiddenFor(m => m.id)
+@if (Model.ProspectoNota.Count > 0)
+{
+    @Html.Hidden("idnotalast", Model.ProspectoNota.Min(x => x.id))
+}
+else
+{
+    @Html.Hidden("idnotalast", "-1")
+}
 <div class="row">
     <div class="col-lg-12">
         <div class="wrapper wrapper-content animated fadeInUp">
@@ -101,7 +109,7 @@
 
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab-1">                                                 
-                                            <div class="feed-activity-list">
+                                            <div class="feed-activity-list" id="divnotas">
                                                 <div class="feed-element">
                                                     <label class="font-noraml">Agregar Nota:</label>
                                                     <div class="media-body ">                                                        
@@ -110,26 +118,19 @@
                                                     <div class="pull-right">
                                                         <a id="btnAgregarNota" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Agregar</a>
                                                     </div>
-                                                </div>
-                                                                                                 
-                                                    @foreach (RoachoSLN.Entidades.CRM.ProspectoNota _nota in Model.ProspectoNota)
+                                                </div>                                                                                                 
+                                                    @foreach (RoachoSLN.Entidades.CRM.ProspectoNota _nota in Model.ProspectoNota.OrderByDescending(x=>x.fecha))
                                                     {
-                                                        <div class="feed-element">
-                                                            <a href="#" class="pull-left">
-                                                                <img alt="image" class="img-circle" src="img/a2.jpg">
-                                                            </a>
-                                                            <div class="media-body ">
-                                                                <small class="pull-right">2h ago</small>
-                                                                <strong>Mark Johnson</strong> posted message on <strong>Monica Smith</strong> site. <br>
-                                                                <small class="text-muted">@DateTimeUtils.TiempoTrascurrido(_nota.fecha, DateTime.Now)</small>
-                                                                <div class="well">
-                                                                    @_nota.nota
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    }
-
-                                                        
+                                                        Html.RenderPartial("_elementosnota", _nota);
+                                                    } 
+                                                @if (Model.ProspectoNota.Count == 5)
+                                                {
+                                                <div class="feed-element">
+                                                    <div class="pull-right">
+                                                        <a id="btnVerMasNota" class="btn btn-xs btn-success"><i class="fa fa-ellipsis-h"></i> Ver Mas Notas</a>
+                                                    </div>
+                                                </div>
+                                                }
                                             </div>
                                         </div>
                                         <div class="tab-pane" id="tab-2">

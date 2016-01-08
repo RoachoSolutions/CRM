@@ -337,6 +337,7 @@
     <Content Include="Areas\Prospectos\Views\Registro\_notas.cshtml" />
     <Content Include="Areas\Prospectos\Views\Registro\_historial.cshtml" />
     <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Areas\Prospectos\Views\Detalle\_elementosnota.cshtml" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Properties\PublishProfiles\localfile.pubxml" />

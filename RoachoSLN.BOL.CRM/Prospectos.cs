@@ -19,16 +19,19 @@ namespace RoachoSLN.BOL.CRM
 
         public static RoachoSLN.Entidades.CRM.Prospectos Obtener(Guid id,bool withreferences=false)
         {
+            RoachoSLN.Entidades.CRM.Prospectos _retvalue = new Entidades.CRM.Prospectos();
             using (DAL.CRM.CRMModel context = new DAL.CRM.CRMModel())
             {
-                context.Configuration.ProxyCreationEnabled = false;
+                context.Configuration.ProxyCreationEnabled = false;              
+              
+                _retvalue= context.Prospectos.Where(x => x.id == id).FirstOrDefault();
+
                 if (withreferences)
                 {
-                    return context.Prospectos.Include("ProspectoHistorico").Include("ProspectoNota").Where(x => x.id == id).FirstOrDefault();
+                    _retvalue.ProspectoNota = context.ProspectoNota.Where(x=>x.idProspecto== id).OrderByDescending(x=>x.fecha).Take(5).ToList();
                 }
-                else {
-                    return context.Prospectos.Where(x => x.id == id).FirstOrDefault();
-                }
+              
+                return _retvalue;
             }
         }
 
@@ -81,7 +84,16 @@ namespace RoachoSLN.BOL.CRM
             return _retValue;
         }
 
-        public static bool AgregarNota(string nota,Guid idProspecto,Guid idUsuario)
+        public static bool AgregarNota(string nota, Guid idProspecto, Guid idUsuario)
+        {
+            bool _retValue = false;
+            Entidades.CRM.ProspectoNota _nota = new Entidades.CRM.ProspectoNota();
+            _retValue = AgregarNota(nota, idProspecto, idUsuario, out _nota);
+            return _retValue;
+        }
+
+
+        public static bool AgregarNota(string nota,Guid idProspecto,Guid idUsuario, out Entidades.CRM.ProspectoNota resultado)
         {
             bool _retValue = false;
             Entidades.CRM.ProspectoNota _nota = new Entidades.CRM.ProspectoNota() ;
@@ -98,7 +110,19 @@ namespace RoachoSLN.BOL.CRM
                     _retValue = true;
                 }
             }
+            resultado = _nota;
             return _retValue;
+        }
+
+        public static List<Entidades.CRM.ProspectoNota> ObtenerNotas(Guid idProspectos,int idnota,bool desc = true,int limit =5)
+        {
+            using (DAL.CRM.CRMModel context = new DAL.CRM.CRMModel())
+            {
+                if (desc)
+                    return context.ProspectoNota.Where(x => x.id < idnota).OrderByDescending(x => x.fecha).Take(limit).ToList();
+                else
+                    return context.ProspectoNota.Where(x => x.id > idnota).OrderBy(x => x.fecha).Take(limit).ToList();
+            }
         }
 
 
